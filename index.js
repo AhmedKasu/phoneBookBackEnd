@@ -4,10 +4,7 @@ const morgan = require("morgan");
 const cors = require("cors");
 const app = express();
 const Person = require("./models/person");
-const { response } = require("express");
 const person = require("./models/person");
-const { count } = require("./models/person");
-
 app.use(express.static("build"));
 app.use(cors());
 app.use(express.json());
@@ -118,6 +115,7 @@ const errorHandler = (error, req, res, next) => {
 };
 app.use(errorHandler);
 
+// eslint-disable-next-line no-undef
 const PORT = process.env.PORT || 3001;
 //const PORT = process.env.PORT;
 app.listen(PORT, () => {
